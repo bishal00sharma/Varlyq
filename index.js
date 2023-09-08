@@ -51,7 +51,7 @@ app.post("/refresh" ,async (req,res) => {
 
 
 
-mongoose.connect("mongodb://localhost:27017/nem201").then(() => {
+mongoose.connect("mongodb+srv://bishalsharmaece:LHynBGybCnVyOjHE@cluster0.ea60qbl.mongodb.net/").then(() => {
     app.listen(8080 ,() => {
         console.log('Server started on port 8080') } )
 }).catch((er)=> {

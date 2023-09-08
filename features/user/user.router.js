@@ -48,7 +48,7 @@ app.post("/login",async(req,res) =>{
     // we are generating the refresh token here
     
 
-    bcrypt.compare(password, user.password, (err, result) => {
+    bcrypt.compare(req.body.password, user.password, (err, result) => {
         if (err) {
           console.error('Error comparing passwords:', err);
           return res.status(500).json({ message: 'Internal server error' });
@@ -64,7 +64,7 @@ app.post("/login",async(req,res) =>{
       });
     }
     catch(e) {
-        res.status(500).send(err.message);
+        res.status(500).send(e.message);
     }
 
 }) 
